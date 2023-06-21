@@ -43,3 +43,9 @@ class FileStorage:
                 for key, val in l_json.items():
                     FileStorage.__objects[key] = eval(
                         val['__class__'])(**val)
+    def delete(self, obj=None):
+        """Delete a given object from __objects, if it exists."""
+        try:
+            del self.__objects["{}.{}".format(type(obj).__name__, obj.id)]
+        except (AttributeError, KeyError):
+            pass
