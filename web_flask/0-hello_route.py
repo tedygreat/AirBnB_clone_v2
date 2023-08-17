@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
     """Displays 'Hello HBNB!'"""
-    return "Hello HBNB!"
+    return render_templete("10-hbnb_filters.html")
 
 
 if __name__ == "__main__":
